@@ -16,8 +16,11 @@ namespace PruebaEntityApi.Vista
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            //Configuracion base de datos
             builder.Services.AddDbContext<TiendaContexto>(options
                 => options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+
             var app = builder.Build();
 
 
